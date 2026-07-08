@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "local-prototype-not-a-market-run",
+  "dataMode": "Disabled",
+  "provenance": {
+    "type": "local_fixture_for_ui_wiring",
+    "marketValuesIncluded": false,
+    "statement": "This fixture intentionally contains no current prices, returns, contributions, event dates, estimates, or fundamentals. A real Alva Playbook must read those values from Data Skills, released feed output, or validated BYOD."
+  },
+  "portfolio": {
+    "name": "AI Leaders Portfolio Watch",
+    "nature": "public_template",
+    "mode": "weighted_portfolio",
+    "weightMode": "user_weighted_example",
+    "benchmark": "SPY",
+    "status": "Local prototype only; live data feed not run."
+  },
+  "summary": {
+    "mode": "Disabled",
+    "headline": "等待真实 Data Skills/feed 运行后显示组合变化。",
+    "portfolioMovePct": null,
+    "topContributor": null,
+    "freshness": "not_run",
+    "importantChange": false
+  },
+  "holdings": [
+    {
+      "symbol": "NVDA",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 18,
+      "isCore": true,
+      "priceMovePct": null,
+      "contributionPct": null,
+      "dataStatus": "not_run",
+      "provenance": "pending Data Skills/feed"
+    },
+    {
+      "symbol": "MSFT",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 18,
+      "isCore": true,
+      "priceMovePct": null,
+      "contributionPct": null,
+      "dataStatus": "not_run",
+      "provenance": "pending Data Skills/feed"
+    },
+    {
+      "symbol": "AAPL",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": true,
+      "priceMovePct": null,
+      "contributionPct": null,
+      "dataStatus": "not_run",
+      "provenance": "pending Data Skills/feed"
+    },
+    {
+      "symbol": "AMZN",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": true,
+      "priceMovePct": null,
+      "contributionPct": null,
+      "dataStatus": "not_run",
+      "provenance": "pending Data Skills/feed"
+    },
+    {
+      "symbol": "META",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": false,
+      "priceMovePct": null,
+      "contributionPct": null,
+      "dataStatus": "not_run",
+      "provenance": "pending Data Skills/feed"
+    },
+    {
+      "symbol": "QQQ",
+      "assetType": "etf",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": false,
+      "priceMovePct": null,
+      "contributionPct": null,
+      "dataStatus": "not_run",
+      "provenance": "pending Data Skills/feed"
+    }
+  ],
+  "events": [
+    {
+      "symbol": "ALL",
+      "title": "Event Watch disabled until a real feed wires earnings/news/event sources.",
+      "eventDate": null,
+      "source": "none_in_local_prototype",
+      "dataStatus": "disabled"
+    }
+  ],
+  "alert": {
+    "decision": "quiet",
+    "sidecarStream": "notify/message",
+    "message": "<|SKIP_NOTIFICATION|>",
+    "triggeredRules": [],
+    "suppressionReasons": [
+      "local prototype has no live Data Skills/feed run",
+      "stale or missing market data suppresses visible push"
+    ],
+    "cooldownHours": 24
+  },
+  "health": {
+    "overall": "disabled_until_live_feed_run",
+    "sources": [
+      {
+        "name": "Alva Data Skills price feed",
+        "status": "not_run"
+      },
+      {
+        "name": "Alva event/earnings source",
+        "status": "not_run"
+      },
+      {
+        "name": "Alert sidecar",
+        "status": "quiet_fixture_only"
+      }
+    ],
+    "blindSpots": [
+      "No real market values are included in this local prototype.",
+      "Real publication requires feed run, release, lint, screenshot, and sidecar verification."
+    ]
+  }
+}

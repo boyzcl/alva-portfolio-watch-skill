@@ -1,0 +1,4 @@
+interface:
+  display_name: "Portfolio Watch"
+  short_description: "Create safe Alva portfolio watch playbooks"
+  default_prompt: "Use $portfolio-watch to turn this ticker list into a safe Alva Portfolio Watch Playbook."

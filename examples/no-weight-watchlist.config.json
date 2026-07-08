@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "portfolioName": "AI Infrastructure Focus Pool",
+  "visibilityIntent": "public_template",
+  "portfolioNature": "watchlist",
+  "language": "zh-CN",
+  "mode": "watchlist_only",
+  "weightMode": "no_weights_provided",
+  "timezone": "Asia/Shanghai",
+  "benchmark": {
+    "symbol": "QQQ",
+    "role": "context_reference",
+    "required": false
+  },
+  "refreshCadence": {
+    "type": "daily",
+    "freshnessMaxAgeHours": 36
+  },
+  "symbols": [
+    {
+      "symbol": "NVDA",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": null,
+      "isCore": true,
+      "note": "No-weight watchlist example."
+    },
+    {
+      "symbol": "AVGO",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": null,
+      "isCore": true,
+      "note": "No-weight watchlist example."
+    },
+    {
+      "symbol": "AMD",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": null,
+      "isCore": false,
+      "note": "No-weight watchlist example."
+    },
+    {
+      "symbol": "SMH",
+      "assetType": "etf",
+      "market": "US",
+      "weightPct": null,
+      "isCore": false,
+      "note": "ETF context row; contribution is disabled unless user chooses equal-weight."
+    }
+  ],
+  "observationGoals": [
+    "holdings_table",
+    "event_watch",
+    "alert_center",
+    "data_health"
+  ],
+  "alertRules": {
+    "singleSymbolMovePct": 5,
+    "portfolioMovePct": null,
+    "earningsWindowDays": 7,
+    "cooldownHours": 24,
+    "suppressWhenDataStale": true,
+    "suppressWhenEvidenceWeak": true,
+    "quietRunSentinel": "<|SKIP_NOTIFICATION|>"
+  },
+  "privacySignals": {
+    "containsRealHoldings": false,
+    "containsCostBasis": false,
+    "containsAccountIdentifier": false,
+    "containsPrivateNotes": false,
+    "publicTemplateConfirmed": true
+  }
+}

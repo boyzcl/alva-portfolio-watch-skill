@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "portfolioName": "Abnormal Coverage Probe",
+  "visibilityIntent": "draft_only",
+  "portfolioNature": "unknown",
+  "language": "zh-CN",
+  "mode": "weighted_portfolio",
+  "weightMode": "user_weighted_example",
+  "timezone": "Asia/Shanghai",
+  "benchmark": {
+    "symbol": "QQQ",
+    "role": "context_reference",
+    "required": false
+  },
+  "refreshCadence": {
+    "type": "daily",
+    "freshnessMaxAgeHours": 36
+  },
+  "symbols": [
+    {
+      "symbol": "NVDA",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 40,
+      "isCore": true,
+      "note": "Valid control row."
+    },
+    {
+      "symbol": "nvda",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 20,
+      "isCore": false,
+      "note": "Duplicate symbol intentionally kept for normalization validation."
+    },
+    {
+      "symbol": "BADTICKER123",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 20,
+      "isCore": true,
+      "note": "Invalid symbol used to verify Disabled/Lite downgrade."
+    },
+    {
+      "symbol": "0700.HK",
+      "assetType": "stock",
+      "market": "HK",
+      "weightPct": 10,
+      "isCore": false,
+      "note": "Non-US coverage probe."
+    },
+    {
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "market": "GLOBAL",
+      "weightPct": 10,
+      "isCore": false,
+      "note": "Multi-asset scope probe; not MVP Full coverage."
+    }
+  ],
+  "observationGoals": [
+    "portfolio_overview",
+    "holdings_table",
+    "alert_center",
+    "data_health"
+  ],
+  "alertRules": {
+    "singleSymbolMovePct": 5,
+    "portfolioMovePct": 2,
+    "earningsWindowDays": 7,
+    "cooldownHours": 24,
+    "suppressWhenDataStale": true,
+    "suppressWhenEvidenceWeak": true,
+    "quietRunSentinel": "<|SKIP_NOTIFICATION|>"
+  },
+  "privacySignals": {
+    "containsRealHoldings": false,
+    "containsCostBasis": false,
+    "containsAccountIdentifier": false,
+    "containsPrivateNotes": false,
+    "publicTemplateConfirmed": false
+  }
+}

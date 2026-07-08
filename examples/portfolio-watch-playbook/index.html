@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Leaders Portfolio Watch</title>
+  <link rel="icon" href="data:," />
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f6f7f4;
+      --ink: #181a1b;
+      --muted: #626866;
+      --line: #d9ded7;
+      --surface: #ffffff;
+      --soft: #eef3f0;
+      --accent: #176b5b;
+      --warn: #9b5b00;
+      --bad: #9d2f2f;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .topline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .pill.bad {
+      border-color: #e2b6b6;
+      color: var(--bad);
+      background: #fff5f5;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 880px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    section {
+      grid-column: span 12;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      min-width: 0;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-8 {
+      grid-column: span 8;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      line-height: 1.3;
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+
+    .metric {
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 650;
+      margin: 8px 0;
+    }
+
+    .note,
+    td,
+    th {
+      font-size: 13px;
+    }
+
+    .note {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      background: var(--soft);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .status-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .alert-box {
+      border-left: 4px solid var(--accent);
+      background: #f1f8f5;
+      padding: 12px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .boundary {
+      border-left-color: var(--warn);
+      background: #fff8ec;
+    }
+
+    @media (max-width: 780px) {
+      main {
+        width: min(100vw - 24px, 1180px);
+        padding-top: 20px;
+      }
+
+      section,
+      .span-4,
+      .span-8 {
+        grid-column: span 12;
+      }
+
+      th:nth-child(3),
+      td:nth-child(3) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topline">
+      <span class="pill bad" id="modePill">Loading</span>
+      <span class="pill">Local prototype</span>
+      <span class="pill">No market values</span>
+    </div>
+    <h1 id="title">Portfolio Watch</h1>
+    <p class="lead" id="lead">正在读取本地 fixture。真实 Alva 发布版必须从 Data Skills、feed 或经过验证的 BYOD 读取金融值。</p>
+
+    <div class="grid">
+      <section class="span-4">
+        <h2>组合状态</h2>
+        <div class="metric" id="headline">N.A.</div>
+        <p class="note" id="summaryNote">等待数据。</p>
+      </section>
+
+      <section class="span-4">
+        <h2>Alert Center</h2>
+        <div class="alert-box" id="alertDecision">等待提醒状态。</div>
+      </section>
+
+      <section class="span-4">
+        <h2>Data Health</h2>
+        <ul class="status-list" id="healthList"></ul>
+      </section>
+
+      <section class="span-8">
+        <h2>Holdings / Watchlist</h2>
+        <table aria-label="Portfolio holdings table">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Weight</th>
+              <th>Move</th>
+              <th>Contribution</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="holdingsBody"></tbody>
+        </table>
+      </section>
+
+      <section class="span-4">
+        <h2>Event Watch</h2>
+        <ul class="status-list" id="eventsList"></ul>
+      </section>
+
+      <section>
+        <h2>Methodology / Boundary</h2>
+        <div class="alert-box boundary">
+          本地原型只验证页面读取、空数据状态、Data Health 和 quiet alert 逻辑。它不是实时市场页面，不包含当前价格、涨跌、贡献、财报日期、估值或新闻事实，也不提供买卖建议、目标价、仓位建议或交易执行。
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    async function loadFeed() {
+      const response = await fetch("./portfolio-watch-sample-feed.json", { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error("Unable to load local fixture");
+      }
+      return response.json();
+    }
+
+    function formatMaybePercent(value) {
+      return value === null || value === undefined ? "N.A." : `${Number(value).toFixed(2)}%`;
+    }
+
+    function render(feed) {
+      document.getElementById("modePill").textContent = feed.dataMode;
+      document.getElementById("title").textContent = feed.portfolio.name;
+      document.getElementById("lead").textContent = feed.provenance.statement;
+      document.getElementById("headline").textContent = feed.summary.headline;
+      document.getElementById("summaryNote").textContent = `${feed.portfolio.status} Freshness: ${feed.summary.freshness}.`;
+
+      const holdingsBody = document.getElementById("holdingsBody");
+      holdingsBody.innerHTML = feed.holdings.map((row) => `
+        <tr>
+          <td>${row.symbol}</td>
+          <td>${row.weightPct === null ? "watchlist-only" : `${row.weightPct}%`}</td>
+          <td>${formatMaybePercent(row.priceMovePct)}</td>
+          <td>${formatMaybePercent(row.contributionPct)}</td>
+          <td>${row.dataStatus}</td>
+        </tr>
+      `).join("");
+
+      const healthList = document.getElementById("healthList");
+      healthList.innerHTML = feed.health.sources.map((source) => `
+        <li><span>${source.name}</span><strong>${source.status}</strong></li>
+      `).join("");
+
+      const eventsList = document.getElementById("eventsList");
+      eventsList.innerHTML = feed.events.map((event) => `
+        <li><span>${event.symbol}</span><strong>${event.dataStatus}</strong></li>
+        <li><span>${event.title}</span><strong>${event.source}</strong></li>
+      `).join("");
+
+      const alertDecision = document.getElementById("alertDecision");
+      alertDecision.textContent = `${feed.alert.decision}: ${feed.alert.message}. Suppressed because ${feed.alert.suppressionReasons.join("; ")}.`;
+    }
+
+    loadFeed().then(render).catch((error) => {
+      document.getElementById("headline").textContent = "Fixture load failed";
+      document.getElementById("summaryNote").textContent = error.message;
+    });
+  </script>
+</body>
+</html>

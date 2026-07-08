@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-07-08T13:31:53+08:00",
+  "url": "http://127.0.0.1:8765/index.html",
+  "browser": "System Chromium via Playwright",
+  "screenshot": "prototype-screenshot.png",
+  "desktop": {
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "title": "AI Leaders Portfolio Watch",
+    "mode": "Disabled",
+    "rows": 6,
+    "alertIncludesQuiet": true,
+    "scrollWidth": 1280,
+    "clientWidth": 1280
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "rows": 6,
+    "scrollWidth": 390,
+    "clientWidth": 390
+  },
+  "consoleErrors": []
+}

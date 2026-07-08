@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "portfolioName": "AI Leaders Portfolio Watch",
+  "visibilityIntent": "public_template",
+  "portfolioNature": "public_template",
+  "language": "zh-CN",
+  "mode": "weighted_portfolio",
+  "weightMode": "user_weighted_example",
+  "timezone": "Asia/Shanghai",
+  "benchmark": {
+    "symbol": "SPY",
+    "role": "broad_market_reference",
+    "required": false
+  },
+  "refreshCadence": {
+    "type": "daily",
+    "preferredRunTime": "after_us_close",
+    "freshnessMaxAgeHours": 36
+  },
+  "symbols": [
+    {
+      "symbol": "NVDA",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 18,
+      "isCore": true,
+      "note": "AI infrastructure bellwether; public template example, not a real holding."
+    },
+    {
+      "symbol": "MSFT",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 18,
+      "isCore": true,
+      "note": "Cloud and AI platform exposure; public template example."
+    },
+    {
+      "symbol": "AAPL",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": true,
+      "note": "Mega-cap platform exposure; public template example."
+    },
+    {
+      "symbol": "AMZN",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": true,
+      "note": "Cloud, retail, and ads exposure; public template example."
+    },
+    {
+      "symbol": "META",
+      "assetType": "stock",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": false,
+      "note": "Ads and AI capex exposure; public template example."
+    },
+    {
+      "symbol": "QQQ",
+      "assetType": "etf",
+      "market": "US",
+      "weightPct": 16,
+      "isCore": false,
+      "note": "ETF exposure inside the watched basket; not used as benchmark here."
+    }
+  ],
+  "observationGoals": [
+    "portfolio_overview",
+    "holdings_table",
+    "contribution_if_weights_available",
+    "event_watch",
+    "alert_center",
+    "data_health",
+    "remix_guide"
+  ],
+  "alertRules": {
+    "singleSymbolMovePct": 5,
+    "portfolioMovePct": 2,
+    "earningsWindowDays": 7,
+    "cooldownHours": 24,
+    "suppressWhenDataStale": true,
+    "suppressWhenEvidenceWeak": true,
+    "quietRunSentinel": "<|SKIP_NOTIFICATION|>"
+  },
+  "privacySignals": {
+    "containsRealHoldings": false,
+    "containsCostBasis": false,
+    "containsAccountIdentifier": false,
+    "containsPrivateNotes": false,
+    "publicTemplateConfirmed": true
+  },
+  "provenancePolicy": {
+    "visibleFinancialValuesMustComeFrom": [
+      "Alva Data Skills",
+      "released Alva feed output",
+      "validated BYOD wired into feed logic"
+    ],
+    "localPrototypeMayShowMarketValues": false
+  },
+  "nonAdvisoryBoundary": {
+    "noBuySellAdvice": true,
+    "noTargetPrices": true,
+    "noPositionSizingAdvice": true,
+    "noTradingExecution": true
+  }
+}
