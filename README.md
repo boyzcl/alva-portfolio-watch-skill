@@ -1,5 +1,7 @@
 # Alva Portfolio Watch Skill
 
+[中文说明](README.zh-CN.md) | English
+
 `portfolio-watch` is a Codex/Agent skill for turning a portfolio, watchlist,
 model portfolio, holdings list, or ticker list into a safe, feed-backed Alva
 Portfolio Watch workflow.
@@ -72,6 +74,7 @@ For real Alva builds:
 alva-portfolio-watch-skill/
   SKILL.md
   README.md
+  README.zh-CN.md
   LICENSE
   portfolio-watch.config.json
   agents/openai.yaml
@@ -95,6 +98,7 @@ alva-portfolio-watch-skill/
     validate_portfolio_watch_skill.py
   docs/
     VALIDATION_SUMMARY.md
+    VALIDATION_SUMMARY.zh-CN.md
     QUALITY_SCORE.md
 ```
 

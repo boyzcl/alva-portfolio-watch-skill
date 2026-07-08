@@ -1,5 +1,7 @@
 # Portfolio Watch Public Validation Summary
 
+[中文摘要](VALIDATION_SUMMARY.zh-CN.md) | English
+
 This repository is a sanitized public package extracted from a private
 three-round dogfood process. Private owner names, user ids, notification ids,
 local paths, screenshots with account context, and production object ids are
@@ -58,4 +60,3 @@ This repository does not include:
 
 The public package is intended to help agents build safe Portfolio Watch
 workflows in the user's own Alva namespace.
-

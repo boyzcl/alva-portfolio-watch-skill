@@ -166,9 +166,11 @@ def package_checks() -> list[Check]:
     required = [
         "SKILL.md",
         "README.md",
+        "README.zh-CN.md",
         "LICENSE",
         ".gitignore",
         "docs/VALIDATION_SUMMARY.md",
+        "docs/VALIDATION_SUMMARY.zh-CN.md",
         "docs/QUALITY_SCORE.md",
         "references/request-routing.md",
         "references/requirement-extraction.md",

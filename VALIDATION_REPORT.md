@@ -6,7 +6,7 @@
 
 ## 结论
 
-- 通过：47
+- 通过：49
 - 失败：0
 - 真实 Alva dogfood：公开仓库只保留脱敏摘要，见 `docs/VALIDATION_SUMMARY.md`；使用者需要在自己的 Alva namespace 下重新跑真实验证。
 - 数据边界：本地原型不包含当前价格、涨跌、贡献、事件日期、估值、新闻或基本面数值。
@@ -15,9 +15,11 @@
 
 - `PASS` exists:SKILL.md: SKILL.md
 - `PASS` exists:README.md: README.md
+- `PASS` exists:README.zh-CN.md: README.zh-CN.md
 - `PASS` exists:LICENSE: LICENSE
 - `PASS` exists:.gitignore: .gitignore
 - `PASS` exists:docs/VALIDATION_SUMMARY.md: docs/VALIDATION_SUMMARY.md
+- `PASS` exists:docs/VALIDATION_SUMMARY.zh-CN.md: docs/VALIDATION_SUMMARY.zh-CN.md
 - `PASS` exists:docs/QUALITY_SCORE.md: docs/QUALITY_SCORE.md
 - `PASS` exists:references/request-routing.md: references/request-routing.md
 - `PASS` exists:references/requirement-extraction.md: references/requirement-extraction.md
